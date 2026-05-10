@@ -12,8 +12,13 @@ config_version=5
 
 config/name="PotatoGameDemo"
 config/tags=PackedStringArray("学习demo")
+run/main_scene="uid://cnp07y6mj3vu"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://dwmh0woa7jj5i"
 
 [display]
 
