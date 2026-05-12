@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cig8dyy763cgu"]
+
+[ext_resource type="PackedScene" uid="uid://dap03p3ti8pd2" path="res://scenes/unit.tscn" id="1_tf0ge"]
+[ext_resource type="Script" uid="uid://ciiylkb6u2y4b" path="res://scenes/enemy/enemy_chaser_slow.gd" id="2_pyos0"]
+[ext_resource type="Texture2D" uid="uid://d1ou504pylric" path="res://assets/sprites/Enemies/Enemy_1.png" id="2_q455v"]
+[ext_resource type="Resource" uid="uid://dgd5ywh0xe4wj" path="res://resources/unit/enemies/stats_enemy_chaser_slow.tres" id="3_pyos0"]
+[ext_resource type="PackedScene" uid="uid://bhjjtk76je3ey" path="res://scenes/components/hitbox_component.tscn" id="5_stgkr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pyos0"]
+radius = 21.0
+height = 48.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pyos0"]
+radius = 150.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ohf4c"]
+radius = 36.013885
+
+[node name="EnemyChaserSlow" unique_id=1299243559 instance=ExtResource("1_tf0ge")]
+collision_layer = 2
+script = ExtResource("2_pyos0")
+flock_push = 20.0
+stats = ExtResource("3_pyos0")
+
+[node name="Sprite" parent="Visuals" parent_id_path=PackedInt32Array(45342187) index="1" unique_id=529872]
+texture = ExtResource("2_q455v")
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=1719322916]
+z_index = 0
+position = Vector2(0, -31)
+shape = SubResource("CapsuleShape2D_pyos0")
+debug_color = Color(0.99658674, 0, 0.19270512, 0.41960785)
+
+[node name="VisionArea" type="Area2D" parent="." index="3" unique_id=1627877424]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea" index="0" unique_id=1544581165]
+position = Vector2(0, -28)
+shape = SubResource("CircleShape2D_pyos0")
+
+[node name="HitboxComponent" parent="." index="5" unique_id=153153654 instance=ExtResource("5_stgkr")]
+collision_layer = 4
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0" unique_id=1584068685]
+position = Vector2(0, -29)
+shape = SubResource("CircleShape2D_ohf4c")
+debug_color = Color(1, 1, 0, 0.19607843)
+
+[node name="HealthBar" parent="." index="7" unique_id=1801077193]
+back_color = Color(0.015686275, 0.05490196, 0.16862746, 1)
+fill_color = Color(0.37254903, 0.5372549, 0.75686276, 1)

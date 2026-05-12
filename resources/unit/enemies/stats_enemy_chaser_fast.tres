@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="UnitStats" format=3 uid="uid://bmqsedwbw1ix2"]
+
+[ext_resource type="Texture2D" uid="uid://c6vplmpl4q4jr" path="res://assets/sprites/Enemies/Enemy_3.png" id="1_vub8p"]
+[ext_resource type="Script" uid="uid://bxmnbydyn15na" path="res://resources/unit/unit_stats.gd" id="2_p0c55"]
+
+[resource]
+script = ExtResource("2_p0c55")
+name = "Charger"
+type = 1
+icon = ExtResource("1_vub8p")
+health = 6.0
+health_increase_per_wave = 2.5
+damage = 1.5
+damage_increase_per_wave = 1.5
+speed = 350.0
+luck = 0
+block_chance = 5.0
+gold_drop = 2
+metadata/_custom_type_script = "uid://bxmnbydyn15na"
