@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene format=3 uid="uid://dcn5qwrcjku31"]
+=======
+[gd_scene format=3 uid="uid://dr37upqaapi3w"]
+>>>>>>> Game1/main
 
 [ext_resource type="PackedScene" uid="uid://65aq63i0uu6k" path="res://scenes/weapons/weapon_base.tscn" id="1_c23y2"]
 [ext_resource type="Texture2D" uid="uid://2fk3slrab3bp" path="res://assets/sprites/Weapons/Melee/Weapon_sword.png" id="2_ve8rv"]
