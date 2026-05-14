@@ -37,16 +37,20 @@ script = ExtResource("2_pyos0")
 flock_push = 20.0
 stats = SubResource("Resource_ohf4c")
 
-[node name="Sprite" parent="Visuals" parent_id_path=PackedInt32Array(45342187) index="1" unique_id=529872]
+[node name="Visuals" parent="." index="0" unique_id=45342187]
+position = Vector2(0, 29)
+
+[node name="Sprite" parent="Visuals" index="1" unique_id=529872]
 texture = ExtResource("2_q455v")
 
 [node name="CollisionShape2D" parent="." index="2" unique_id=1719322916]
 z_index = 0
-position = Vector2(0, -31)
+position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_pyos0")
 debug_color = Color(0.99658674, 0, 0.19270512, 0.41960785)
 
 [node name="VisionArea" type="Area2D" parent="." index="3" unique_id=1627877424]
+position = Vector2(0, 29)
 collision_layer = 0
 collision_mask = 2
 
@@ -55,6 +59,7 @@ position = Vector2(0, -28)
 shape = SubResource("CircleShape2D_pyos0")
 
 [node name="HurtboxComponent" parent="." index="4" unique_id=596892966]
+position = Vector2(0, 29)
 collision_layer = 8
 collision_mask = 16
 
@@ -64,6 +69,7 @@ shape = SubResource("CircleShape2D_stgkr")
 debug_color = Color(0.9931882, 0, 0.24798015, 0.41960785)
 
 [node name="HitboxComponent" parent="." index="5" unique_id=153153654 instance=ExtResource("5_stgkr")]
+position = Vector2(0, 29)
 collision_layer = 4
 collision_mask = 32
 
@@ -73,6 +79,8 @@ shape = SubResource("CircleShape2D_ohf4c")
 debug_color = Color(1, 1, 0, 0.19607843)
 
 [node name="HealthBar" parent="." index="7" unique_id=1801077193]
+offset_top = -61.0
+offset_bottom = -41.0
 back_color = Color(0.015686275, 0.05490196, 0.16862746, 1)
 fill_color = Color(0.37254903, 0.5372549, 0.75686276, 1)
 

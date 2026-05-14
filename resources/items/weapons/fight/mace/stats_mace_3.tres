@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WeaponStats" format=3 uid="uid://dxdsgfwar6rkl"]
+
+[ext_resource type="Script" uid="uid://bauqjlke2su02" path="res://resources/items/weapons/weapon_stats.gd" id="1_kshhw"]
+
+[resource]
+script = ExtResource("1_kshhw")
+damage = 45.0
+max_shoot_distance = 200.0
+knockback = 3.0
+metadata/_custom_type_script = "uid://bauqjlke2su02"

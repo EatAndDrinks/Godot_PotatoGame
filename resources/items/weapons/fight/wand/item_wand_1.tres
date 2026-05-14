@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemWeapon" format=3 uid="uid://betak1xds04ph"]
+
+[ext_resource type="Script" uid="uid://b26diomogotlv" path="res://resources/items/weapons/item_weapon.gd" id="1_o81wt"]
+[ext_resource type="Texture2D" uid="uid://bvrve6ucp4svv" path="res://assets/sprites/Weapons/Icons/weapon_wand_icon.png" id="1_osc8e"]
+[ext_resource type="PackedScene" uid="uid://6sltqeq326ea" path="res://scenes/weapons/fight/weapon_wand.tscn" id="2_rs7ga"]
+[ext_resource type="Resource" uid="uid://xdxsa1i42idn" path="res://resources/items/weapons/fight/wand/stats_wand_1.tres" id="4_gnw8c"]
+[ext_resource type="Resource" uid="uid://bnaavoskxc7qs" path="res://resources/items/weapons/fight/wand/item_wand_2.tres" id="5_rs7ga"]
+
+[resource]
+script = ExtResource("1_o81wt")
+scene = ExtResource("2_rs7ga")
+stats = ExtResource("4_gnw8c")
+upgrade_to = ExtResource("5_rs7ga")
+item_name = "Wand_1"
+item_icon = ExtResource("1_osc8e")
+item_cost = 20
+metadata/_custom_type_script = "uid://b26diomogotlv"

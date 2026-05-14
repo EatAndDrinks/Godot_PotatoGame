@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemWeapon" format=3 uid="uid://b41i8lrrfj3ce"]
+
+[ext_resource type="Texture2D" uid="uid://yk5ltsb4khr8" path="res://assets/sprites/Weapons/Icons/weapon_chainsaw_icon.png" id="1_bqtnn"]
+[ext_resource type="PackedScene" uid="uid://dlrw3yjoy1ctc" path="res://scenes/weapons/fight/weapon_chainsaw.tscn" id="2_c3d7d"]
+[ext_resource type="Script" uid="uid://b26diomogotlv" path="res://resources/items/weapons/item_weapon.gd" id="3_y02qa"]
+[ext_resource type="Resource" uid="uid://cqa5g8lpo4fip" path="res://resources/items/weapons/fight/chainsaw/stats_chainsaw_2.tres" id="4_bqtnn"]
+[ext_resource type="Resource" uid="uid://b0laepbretclp" path="res://resources/items/weapons/fight/chainsaw/item_chainsaw_3.tres" id="5_c3d7d"]
+
+[resource]
+script = ExtResource("3_y02qa")
+scene = ExtResource("2_c3d7d")
+stats = ExtResource("4_bqtnn")
+upgrade_to = ExtResource("5_c3d7d")
+item_name = "Chainsaw_2"
+item_icon = ExtResource("1_bqtnn")
+item_tier = 1
+item_cost = 15
+metadata/_custom_type_script = "uid://b26diomogotlv"
