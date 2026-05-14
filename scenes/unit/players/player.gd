@@ -5,18 +5,20 @@ class_name Player
 @export var dash_duration : float = 0.5
 @export var dash_speed_mulit : float = 2.5
 @export var dash_cooldown : float = 0.5
-@export var is_dash : bool = false
-@export var dash_available : bool = true
+
 
 
 @onready var dash_cooldown_timer: Timer = $DashCoolDownTimer
 @onready var dash_timer: Timer = $DashTimer
 @onready var collision: CollisionShape2D = $CollisionShape2D
 @onready var trail: Trail = %Trail
+@onready var weapon_container: WeaponContainer = $WeaponContainer
 
+var current_weapon : Array[Weapon] = []
 
 var move_dir : Vector2
-
+var is_dash : bool = false
+var dash_available : bool = true
 
 
 #--------------
@@ -26,6 +28,9 @@ func _ready() -> void:
 	super._ready()
 	dash_timer.wait_time = dash_duration
 	dash_cooldown_timer.wait_time = dash_cooldown
+	add_weapon(preload("uid://617p5pkaa1cg"))
+
+
 
 
 #--------------
@@ -82,6 +87,18 @@ func start_dash() -> void:
 
 func can_dash() -> bool:
 	return not is_dash and dash_cooldown_timer.is_stopped() and Input.is_action_just_pressed("dash") and move_dir != Vector2.ZERO
+
+
+func add_weapon(data : ItemWeapon) -> void:
+	var weapon : Weapon = data.scene.instantiate()
+	add_child(weapon)
+	weapon.setup_weapon(data)
+	current_weapon.append(weapon)
+	weapon_container.update_weapon_position(current_weapon)
+
+
+func is_facing_right() -> bool:
+	return visuals.scale.x == -0.5
 
 
 func _on_dash_timer_timeout() -> void:

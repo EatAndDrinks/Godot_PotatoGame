@@ -1,14 +1,24 @@
 [gd_scene format=3 uid="uid://n7s7dxg2dgdy"]
 
 [ext_resource type="PackedScene" uid="uid://cig8dyy763cgu" path="res://scenes/enemy/enemy_chaser_slow.tscn" id="1_bbk1q"]
-[ext_resource type="Resource" uid="uid://c85y2ch516nyi" path="res://resources/unit/enemies/stats_enemy_chaser_mid.tres" id="2_5tu3x"]
 [ext_resource type="Texture2D" uid="uid://bf4ls8ho3cuqa" path="res://assets/sprites/Enemies/Enemy_2.png" id="2_ak4uh"]
+[ext_resource type="Script" uid="uid://bxmnbydyn15na" path="res://resources/unit/unit_stats.gd" id="3_ak4uh"]
+
+[sub_resource type="Resource" id="Resource_5tu3x"]
+script = ExtResource("3_ak4uh")
+name = "ChaserMid"
+type = 1
+icon = ExtResource("2_ak4uh")
+health = 8.0
+health_increase_per_wave = 2.0
+damage = 2.0
+luck = 0
+block_chance = 7.0
+gold_drop = 2
+metadata/_custom_type_script = "uid://bxmnbydyn15na"
 
 [node name="EnemyChaserMid" unique_id=1299243559 instance=ExtResource("1_bbk1q")]
-stats = ExtResource("2_5tu3x")
+stats = SubResource("Resource_5tu3x")
 
 [node name="Sprite" parent="Visuals" parent_id_path=PackedInt32Array(45342187) index="1" unique_id=529872]
 texture = ExtResource("2_ak4uh")
-
-[node name="CollisionShape2D" parent="." index="2" unique_id=1719322916]
-z_index = 0

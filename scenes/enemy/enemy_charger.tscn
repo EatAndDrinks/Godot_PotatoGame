@@ -2,13 +2,28 @@
 
 [ext_resource type="PackedScene" uid="uid://cig8dyy763cgu" path="res://scenes/enemy/enemy_chaser_slow.tscn" id="1_1axsv"]
 [ext_resource type="Texture2D" uid="uid://emsi6ifyt0vf" path="res://assets/sprites/Enemies/Enemy_5.png" id="2_54bed"]
-[ext_resource type="Resource" uid="uid://qc7xolpnmpti" path="res://resources/unit/enemies/stats_enemy_charger.tres" id="2_mm3bj"]
+[ext_resource type="Script" uid="uid://bxmnbydyn15na" path="res://resources/unit/unit_stats.gd" id="2_mm3bj"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cnb8e"]
+load_path = "res://.godot/imported/Enemy_5.png-5d0c221589e691ed6f5113dbabfa94ef.ctex"
+
+[sub_resource type="Resource" id="Resource_ai68y"]
+script = ExtResource("2_mm3bj")
+name = "Charger"
+type = 1
+icon = SubResource("CompressedTexture2D_cnb8e")
+health = 8.0
+health_increase_per_wave = 3.0
+damage = 2.0
+damage_increase_per_wave = 2.0
+speed = 280.0
+luck = 0
+block_chance = 5.0
+gold_drop = 3
+metadata/_custom_type_script = "uid://bxmnbydyn15na"
 
 [node name="EnemyCharger" unique_id=1299243559 instance=ExtResource("1_1axsv")]
-stats = ExtResource("2_mm3bj")
+stats = SubResource("Resource_ai68y")
 
 [node name="Sprite" parent="Visuals" parent_id_path=PackedInt32Array(45342187) index="1" unique_id=529872]
 texture = ExtResource("2_54bed")
-
-[node name="CollisionShape2D" parent="." index="2" unique_id=1719322916]
-z_index = 0

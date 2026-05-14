@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WeaponStats" format=3 uid="uid://dagpliti5si8g"]
+
+[ext_resource type="Script" uid="uid://bauqjlke2su02" path="res://resources/items/weapons/weapon_stats.gd" id="1_x13j3"]
+
+[resource]
+script = ExtResource("1_x13j3")
+damage = 30.0
+accuracy = 1.0
+cooldown = 0.7
+crit_chance = 0.1
+crit_damage = 2.0
+max_shoot_distance = 200.0
+life_steal = 0.0
+metadata/_custom_type_script = "uid://bauqjlke2su02"

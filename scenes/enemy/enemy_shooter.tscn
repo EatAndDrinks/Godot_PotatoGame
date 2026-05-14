@@ -2,13 +2,24 @@
 
 [ext_resource type="PackedScene" uid="uid://cig8dyy763cgu" path="res://scenes/enemy/enemy_chaser_slow.tscn" id="1_r31ym"]
 [ext_resource type="Texture2D" uid="uid://4mllmwdfhmce" path="res://assets/sprites/Enemies/Enemy_4.png" id="2_3glft"]
-[ext_resource type="Resource" uid="uid://ctwgg1yqy71l1" path="res://resources/unit/enemies/stats_enemy_shooter.tres" id="2_hs2gs"]
+[ext_resource type="Script" uid="uid://bxmnbydyn15na" path="res://resources/unit/unit_stats.gd" id="3_3glft"]
+
+[sub_resource type="Resource" id="Resource_hs2gs"]
+script = ExtResource("3_3glft")
+name = "Shooter"
+type = 1
+icon = ExtResource("2_3glft")
+health = 4.0
+health_increase_per_wave = 2.0
+damage = 3.0
+damage_increase_per_wave = 1.5
+luck = 0
+block_chance = 2.0
+gold_drop = 4
+metadata/_custom_type_script = "uid://bxmnbydyn15na"
 
 [node name="EnemyShooter" unique_id=1299243559 instance=ExtResource("1_r31ym")]
-stats = ExtResource("2_hs2gs")
+stats = SubResource("Resource_hs2gs")
 
 [node name="Sprite" parent="Visuals" parent_id_path=PackedInt32Array(45342187) index="1" unique_id=529872]
 texture = ExtResource("2_3glft")
-
-[node name="CollisionShape2D" parent="." index="2" unique_id=1719322916]
-z_index = 0

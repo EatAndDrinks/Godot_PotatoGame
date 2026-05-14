@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ItemWeapon" format=3 uid="uid://cnwflo5wdbu3b"]
+
+[ext_resource type="PackedScene" uid="uid://1hrjk2yccdq4" path="res://scenes/weapons/fight/weapon_punch.tscn" id="1_bchcc"]
+[ext_resource type="Script" uid="uid://b26diomogotlv" path="res://resources/items/weapons/item_weapon.gd" id="2_bchcc"]
+[ext_resource type="Resource" uid="uid://dyucicd703lfb" path="res://resources/items/weapons/fight/punch/stats_punch_3.tres" id="3_bchcc"]
+[ext_resource type="Resource" uid="uid://ckp1nbvgiqy54" path="res://resources/items/weapons/fight/punch/item_punch_4.tres" id="4_1sqpy"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xowwl"]
+load_path = "res://.godot/imported/weapon_punch_icon.png-cd3fd3d21bb6bae5112dff100587a0da.ctex"
+
+[resource]
+script = ExtResource("2_bchcc")
+scene = ExtResource("1_bchcc")
+stats = ExtResource("3_bchcc")
+upgrade_to = ExtResource("4_1sqpy")
+item_name = "Punch_3"
+item_icon = SubResource("CompressedTexture2D_xowwl")
+item_tier = 2
+item_cost = 60
+metadata/_custom_type_script = "uid://b26diomogotlv"

@@ -3,8 +3,20 @@
 [ext_resource type="PackedScene" uid="uid://dap03p3ti8pd2" path="res://scenes/unit.tscn" id="1_tf0ge"]
 [ext_resource type="Script" uid="uid://ciiylkb6u2y4b" path="res://scenes/enemy/enemy_chaser_slow.gd" id="2_pyos0"]
 [ext_resource type="Texture2D" uid="uid://d1ou504pylric" path="res://assets/sprites/Enemies/Enemy_1.png" id="2_q455v"]
-[ext_resource type="Resource" uid="uid://dgd5ywh0xe4wj" path="res://resources/unit/enemies/stats_enemy_chaser_slow.tres" id="3_pyos0"]
+[ext_resource type="Script" uid="uid://bxmnbydyn15na" path="res://resources/unit/unit_stats.gd" id="4_stgkr"]
 [ext_resource type="PackedScene" uid="uid://bhjjtk76je3ey" path="res://scenes/components/hitbox_component.tscn" id="5_stgkr"]
+
+[sub_resource type="Resource" id="Resource_ohf4c"]
+script = ExtResource("4_stgkr")
+name = "ChaserSlow"
+type = 1
+icon = ExtResource("2_q455v")
+health = 6.0
+damage = 1.5
+speed = 250.0
+luck = 0
+block_chance = 3.0
+metadata/_custom_type_script = "uid://bxmnbydyn15na"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pyos0"]
 radius = 21.0
@@ -13,6 +25,9 @@ height = 48.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_pyos0"]
 radius = 150.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_stgkr"]
+radius = 31.04835
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ohf4c"]
 radius = 36.013885
 
@@ -20,7 +35,7 @@ radius = 36.013885
 collision_layer = 2
 script = ExtResource("2_pyos0")
 flock_push = 20.0
-stats = ExtResource("3_pyos0")
+stats = SubResource("Resource_ohf4c")
 
 [node name="Sprite" parent="Visuals" parent_id_path=PackedInt32Array(45342187) index="1" unique_id=529872]
 texture = ExtResource("2_q455v")
@@ -39,6 +54,15 @@ collision_mask = 2
 position = Vector2(0, -28)
 shape = SubResource("CircleShape2D_pyos0")
 
+[node name="HurtboxComponent" parent="." index="4" unique_id=596892966]
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0" unique_id=62974542]
+position = Vector2(0, -30)
+shape = SubResource("CircleShape2D_stgkr")
+debug_color = Color(0.9931882, 0, 0.24798015, 0.41960785)
+
 [node name="HitboxComponent" parent="." index="5" unique_id=153153654 instance=ExtResource("5_stgkr")]
 collision_layer = 4
 collision_mask = 32
@@ -51,3 +75,9 @@ debug_color = Color(1, 1, 0, 0.19607843)
 [node name="HealthBar" parent="." index="7" unique_id=1801077193]
 back_color = Color(0.015686275, 0.05490196, 0.16862746, 1)
 fill_color = Color(0.37254903, 0.5372549, 0.75686276, 1)
+
+[node name="KnockbackTimer" type="Timer" parent="." index="9" unique_id=1877382540]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="KnockbackTimer" to="." method="_on_knockback_timer_timeout"]
