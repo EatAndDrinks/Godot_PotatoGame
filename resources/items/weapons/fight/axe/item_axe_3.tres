@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemWeapon" format=3 uid="uid://ylye03iu0uit"]
+
+[ext_resource type="Texture2D" uid="uid://d8op56q0uwh1" path="res://assets/sprites/Weapons/Icons/weapon_axe_icon.png" id="1_yt7ku"]
+[ext_resource type="PackedScene" uid="uid://do37y4arx3gdt" path="res://scenes/weapons/fight/weapon_axe.tscn" id="2_u2bpq"]
+[ext_resource type="Script" uid="uid://b26diomogotlv" path="res://resources/items/weapons/item_weapon.gd" id="3_y2qsk"]
+[ext_resource type="Resource" uid="uid://pdut2b7vp2j8" path="res://resources/items/weapons/fight/axe/stats_axe_3.tres" id="4_yt7ku"]
+[ext_resource type="Resource" uid="uid://rdyu6mo1ywaq" path="res://resources/items/weapons/fight/axe/item_axe_4.tres" id="5_u2bpq"]
+
+[resource]
+script = ExtResource("3_y2qsk")
+scene = ExtResource("2_u2bpq")
+stats = ExtResource("4_yt7ku")
+upgrade_to = ExtResource("5_u2bpq")
+item_name = "Axe_3"
+item_icon = ExtResource("1_yt7ku")
+item_tier = 2
+item_cost = 60
+metadata/_custom_type_script = "uid://b26diomogotlv"

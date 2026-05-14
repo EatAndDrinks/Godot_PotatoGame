@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dlrw3yjoy1ctc"]
+
+[ext_resource type="PackedScene" uid="uid://65aq63i0uu6k" path="res://scenes/weapons/weapon_base.tscn" id="1_on4jv"]
+[ext_resource type="Texture2D" uid="uid://nrabpofasepu" path="res://assets/sprites/Weapons/Melee/Weapon_chainsaw.png" id="2_lmxen"]
+[ext_resource type="PackedScene" uid="uid://bhjjtk76je3ey" path="res://scenes/components/hitbox_component.tscn" id="3_lqjcc"]
+[ext_resource type="Script" uid="uid://dtoosygfys403" path="res://scenes/weapons/fight/fight_behavior.gd" id="4_lmxen"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjiid"]
+size = Vector2(164, 66)
+
+[node name="WeaponChainsaw" unique_id=2104126142 instance=ExtResource("1_on4jv")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1674848682]
+position = Vector2(36, -3)
+texture = ExtResource("2_lmxen")
+
+[node name="HitboxComponent" parent="Sprite2D" index="0" unique_id=153153654 instance=ExtResource("3_lqjcc")]
+collision_layer = 16
+collision_mask = 8
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/HitboxComponent" index="0" unique_id=624811744]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_jjiid")
+debug_color = Color(0.98039216, 0.07058824, 0.29411766, 0.41960785)
+
+[node name="WeaponBehavior" parent="." index="3" unique_id=1063028993 node_paths=PackedStringArray("hitbox", "weapon")]
+script = ExtResource("4_lmxen")
+hitbox = NodePath("../Sprite2D/HitboxComponent")
+weapon = NodePath("..")
