@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemWeapon" format=3 uid="uid://c5k3pogyynfrs"]
+
+[ext_resource type="Texture2D" uid="uid://bnb452021oi28" path="res://assets/sprites/Weapons/Icons/weapon_sword_icon.png" id="1_v0ye8"]
+[ext_resource type="Script" uid="uid://b26diomogotlv" path="res://resources/items/weapons/item_weapon.gd" id="2_a8opc"]
+[ext_resource type="PackedScene" uid="uid://dr37upqaapi3w" path="res://scenes/weapons/fight/weapon_sword.tscn" id="2_yfnri"]
+[ext_resource type="Resource" uid="uid://cve1xnj2ka1ld" path="res://resources/items/weapons/fight/sword/stats_sword_2.tres" id="3_nfan3"]
+[ext_resource type="Resource" uid="uid://cj04sy455hyrx" path="res://resources/items/weapons/fight/sword/item_sword_3.tres" id="4_yfnri"]
+
+[resource]
+script = ExtResource("2_a8opc")
+scene = ExtResource("2_yfnri")
+stats = ExtResource("3_nfan3")
+upgrade_to = ExtResource("4_yfnri")
+item_name = "Sword_1"
+item_icon = ExtResource("1_v0ye8")
+item_tier = 1
+item_cost = 50
+metadata/_custom_type_script = "uid://b26diomogotlv"

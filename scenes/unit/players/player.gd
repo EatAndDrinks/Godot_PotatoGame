@@ -29,6 +29,8 @@ func _ready() -> void:
 	dash_timer.wait_time = dash_duration
 	dash_cooldown_timer.wait_time = dash_cooldown
 	add_weapon(preload("uid://617p5pkaa1cg"))
+	
+	add_weapon(preload("uid://dh7acvrcfkbia"))
 
 
 
