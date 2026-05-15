@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemWeapon" format=3 uid="uid://c308y7lmsfhhj"]
+
+[ext_resource type="Texture2D" uid="uid://dx2oqsohwycoa" path="res://assets/sprites/Weapons/Icons/weapon_shotgun_icon.png" id="1_o8qup"]
+[ext_resource type="Script" uid="uid://b26diomogotlv" path="res://resources/items/weapons/item_weapon.gd" id="1_rcs0x"]
+[ext_resource type="PackedScene" uid="uid://cg8kwjaopd0wy" path="res://scenes/weapons/shoot/weapon_shotgun.tscn" id="2_xoe6t"]
+[ext_resource type="Resource" uid="uid://xhgvwsn7g1b2" path="res://resources/items/weapons/shoot/shotgun/stats_shotgun_1.tres" id="4_4vjkq"]
+[ext_resource type="Resource" uid="uid://chwuid6pq71y2" path="res://resources/items/weapons/shoot/shotgun/item_shotgun_2.tres" id="5_xoe6t"]
+
+[resource]
+script = ExtResource("1_rcs0x")
+typr = 1
+scene = ExtResource("2_xoe6t")
+stats = ExtResource("4_4vjkq")
+upgrade_to = ExtResource("5_xoe6t")
+item_name = "Shotgun_1"
+item_icon = ExtResource("1_o8qup")
+item_cost = 30
+metadata/_custom_type_script = "uid://b26diomogotlv"

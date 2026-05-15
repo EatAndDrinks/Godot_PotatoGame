@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemWeapon" format=3 uid="uid://c2k7m21nxvob8"]
+
+[ext_resource type="Texture2D" uid="uid://dmo5qwx6l6wdu" path="res://assets/sprites/Weapons/Icons/weapon_revolver_icon.png" id="1_xsyfj"]
+[ext_resource type="PackedScene" uid="uid://clbqm4qqpi8pe" path="res://scenes/weapons/shoot/weapon_revovler.tscn" id="2_evafi"]
+[ext_resource type="Script" uid="uid://b26diomogotlv" path="res://resources/items/weapons/item_weapon.gd" id="3_bxcmy"]
+[ext_resource type="Resource" uid="uid://ciopslehj80eu" path="res://resources/items/weapons/shoot/revovler/stats_revovler_3.tres" id="4_xsyfj"]
+[ext_resource type="Resource" uid="uid://b3g4bry2ckki2" path="res://resources/items/weapons/shoot/revovler/item_revovler_4.tres" id="5_evafi"]
+
+[resource]
+script = ExtResource("3_bxcmy")
+typr = 1
+scene = ExtResource("2_evafi")
+stats = ExtResource("4_xsyfj")
+upgrade_to = ExtResource("5_evafi")
+item_name = "Revovler_3"
+item_icon = ExtResource("1_xsyfj")
+item_tier = 2
+item_cost = 25
+metadata/_custom_type_script = "uid://b26diomogotlv"

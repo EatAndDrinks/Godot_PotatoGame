@@ -28,7 +28,7 @@ func _ready() -> void:
 	super._ready()
 	dash_timer.wait_time = dash_duration
 	dash_cooldown_timer.wait_time = dash_cooldown
-	add_weapon(preload("uid://b6v2h3o572xf6"))
+	add_weapon(preload("uid://cx1q83vpf2e7j"))
 
 
 

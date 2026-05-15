@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c26o1emvcq720"]
+
+[ext_resource type="PackedScene" uid="uid://65aq63i0uu6k" path="res://scenes/weapons/weapon_base.tscn" id="1_4vb2x"]
+[ext_resource type="Texture2D" uid="uid://xqoogkscdty6" path="res://assets/sprites/Weapons/Range/WeaponLaser.png" id="2_ijang"]
+[ext_resource type="Script" uid="uid://cv11buhb86fw5" path="res://scenes/weapons/shoot/shoot_behavior.gd" id="3_5pd4f"]
+
+[node name="WeaponLaser" unique_id=2104126142 instance=ExtResource("1_4vb2x")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1674848682]
+position = Vector2(15, -7)
+texture = ExtResource("2_ijang")
+
+[node name="Muzzle" type="Marker2D" parent="Sprite2D" index="0" unique_id=1306028276]
+unique_name_in_owner = true
+position = Vector2(38, -12)
+
+[node name="WeaponBehavior" parent="." index="3" unique_id=1063028993 node_paths=PackedStringArray("weapon")]
+script = ExtResource("3_5pd4f")
+weapon = NodePath("..")

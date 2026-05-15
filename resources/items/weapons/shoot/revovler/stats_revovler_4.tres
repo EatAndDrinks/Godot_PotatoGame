@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponStats" format=3 uid="uid://blq274xy2hi3c"]
+
+[ext_resource type="PackedScene" uid="uid://co1cfwnnukubx" path="res://scenes/projectile/projectile_revovler.tscn" id="1_mg2a1"]
+[ext_resource type="Script" uid="uid://bauqjlke2su02" path="res://resources/items/weapons/weapon_stats.gd" id="2_857q4"]
+
+[resource]
+script = ExtResource("2_857q4")
+damage = 100.0
+max_shoot_distance = 400.0
+projectile_scene = ExtResource("1_mg2a1")
+metadata/_custom_type_script = "uid://bauqjlke2su02"
