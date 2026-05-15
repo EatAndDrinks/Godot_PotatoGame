@@ -24,6 +24,7 @@ func _physics_process(delta: float) -> void:
 			closest_traget = null
 	
 	rotate_to_target()
+	update_visuals()
 	
 	if can_use_weapon():
 		use_weapon()
@@ -53,9 +54,16 @@ func get_idle_rotation() -> float:
 	else:
 		return PI
 
+func update_visuals() -> void:
+	if abs(rotation) > PI / 2:
+		sprite.scale.y = -0.5
+	else :
+		sprite.scale.y = 0.5
+
+
 func calculate_spread() -> void:
 	##计算武器旋转幅度
-	weapon_spread += randf_range(-1 + data.stats.accuracy , 1 - data.stats.accuracy)
+	weapon_spread = randf_range(-1 + data.stats.accuracy , 1 - data.stats.accuracy)
 	rotation += weapon_spread 
 
 func get_closest_target() -> Node2D:

@@ -5,25 +5,20 @@
 [ext_resource type="Texture2D" uid="uid://ov4fmsbglo55" path="res://assets/sprites/Map.png" id="2_aj7ud"]
 [ext_resource type="PackedScene" uid="uid://cinl8lvhwgxtq" path="res://scenes/unit/players/player_well_rounded.tscn" id="3_asdgj"]
 [ext_resource type="Script" uid="uid://dg5w2m7po6hv0" path="res://scenes/arena/camera_2d.gd" id="5_asdgj"]
-[ext_resource type="PackedScene" uid="uid://c7dq3wxbp0dm7" path="res://scenes/enemy/enemy_chaser_fast.tscn" id="8_2ml6w"]
+[ext_resource type="PackedScene" uid="uid://cig8dyy763cgu" path="res://scenes/enemy/enemy_chaser_slow.tscn" id="6_ii07k"]
+[ext_resource type="Texture2D" uid="uid://d1ou504pylric" path="res://assets/sprites/Enemies/Enemy_1.png" id="7_6w4xk"]
 [ext_resource type="Script" uid="uid://bxmnbydyn15na" path="res://resources/unit/unit_stats.gd" id="8_6w4xk"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u52cf"]
-load_path = "res://.godot/imported/Enemy_3.png-8da9e22533a65fba1af9b548b001edef.ctex"
-
-[sub_resource type="Resource" id="Resource_ii07k"]
+[sub_resource type="Resource" id="Resource_2ml6w"]
 script = ExtResource("8_6w4xk")
-name = "Charger"
+name = "ChaserSlow"
 type = 1
-icon = SubResource("CompressedTexture2D_u52cf")
+icon = ExtResource("7_6w4xk")
 health = 1000.0
-health_increase_per_wave = 2.5
 damage = 1.5
-damage_increase_per_wave = 1.5
-speed = 350.0
+speed = 250.0
 luck = 0
-block_chance = 5.0
-gold_drop = 2
+block_chance = 3.0
 metadata/_custom_type_script = "uid://bxmnbydyn15na"
 
 [node name="Arena" type="Node2D" unique_id=379034871 node_paths=PackedStringArray("player")]
@@ -47,6 +42,6 @@ texture = ExtResource("2_aj7ud")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=958367158]
 script = ExtResource("5_asdgj")
 
-[node name="EnemyChaserFast" parent="." unique_id=1236035039 instance=ExtResource("8_2ml6w")]
-position = Vector2(-413, 197)
-stats = SubResource("Resource_ii07k")
+[node name="EnemyChaserSlow" parent="." unique_id=1299243559 instance=ExtResource("6_ii07k")]
+position = Vector2(-521, 13)
+stats = SubResource("Resource_2ml6w")
