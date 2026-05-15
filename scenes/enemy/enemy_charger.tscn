@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cig8dyy763cgu" path="res://scenes/enemy/enemy_chaser_slow.tscn" id="1_1axsv"]
 [ext_resource type="Texture2D" uid="uid://emsi6ifyt0vf" path="res://assets/sprites/Enemies/Enemy_5.png" id="2_54bed"]
 [ext_resource type="Script" uid="uid://bxmnbydyn15na" path="res://resources/unit/unit_stats.gd" id="2_mm3bj"]
+[ext_resource type="Script" uid="uid://cop06sc7spiay" path="res://scenes/enemy/charger_behavior.gd" id="4_mm3bj"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cnb8e"]
 load_path = "res://.godot/imported/Enemy_5.png-5d0c221589e691ed6f5113dbabfa94ef.ctex"
@@ -22,8 +23,54 @@ block_chance = 5.0
 gold_drop = 3
 metadata/_custom_type_script = "uid://bxmnbydyn15na"
 
+[sub_resource type="Animation" id="Animation_mm3bj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cnb8e"]
+resource_name = "charge"
+length = 0.7
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.96435624, 0.1582115, 0.25256976, 1), Color(1, 1, 1, 1), Color(0.9647059, 0.15686275, 0.2509804, 1), Color(1, 1, 1, 1), Color(0.9647059, 0.15686275, 0.2509804, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ai68y"]
+_data = {
+&"RESET": SubResource("Animation_mm3bj"),
+&"charge": SubResource("Animation_cnb8e")
+}
+
 [node name="EnemyCharger" unique_id=1299243559 instance=ExtResource("1_1axsv")]
 stats = SubResource("Resource_ai68y")
 
 [node name="Sprite" parent="Visuals" parent_id_path=PackedInt32Array(45342187) index="1" unique_id=529872]
 texture = ExtResource("2_54bed")
+
+[node name="ChargerBehavior" type="Node2D" parent="." index="10" unique_id=1589066887 node_paths=PackedStringArray("enemy", "anim_effect")]
+script = ExtResource("4_mm3bj")
+enemy = NodePath("..")
+anim_effect = NodePath("../AnimationEffects")
+
+[node name="AnimationEffects" type="AnimationPlayer" parent="." index="11" unique_id=1331804191]
+libraries/ = SubResource("AnimationLibrary_ai68y")

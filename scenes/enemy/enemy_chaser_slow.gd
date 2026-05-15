@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 		return
 	
 	position += (get_move_direction() + knockback_dir * knockback_power) * stats.speed * delta
-	#update_rotation()
+	update_rotation()
 
 
 func can_move_toward_player() -> bool:
@@ -61,8 +61,14 @@ func _on_hurtbox_component_on_damaged(hitbox: HitboxComponent) -> void:
 		var dir : Vector2 = hitbox.source.global_position.direction_to(global_position)
 		apply_knockback(dir , hitbox.knockback_power)
 
-
-
+func update_rotation():
+	if is_instance_valid(Global.player):
+		if position.x > Global.player.position.x:
+			visuals.scale = Vector2(0.5 , 0.5)
+		else:
+			visuals.scale = Vector2(-0.5 , 0.5)
+	else:
+		return
 
 
 func _on_knockback_timer_timeout() -> void:

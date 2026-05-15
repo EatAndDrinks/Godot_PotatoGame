@@ -5,20 +5,22 @@
 [ext_resource type="Texture2D" uid="uid://ov4fmsbglo55" path="res://assets/sprites/Map.png" id="2_aj7ud"]
 [ext_resource type="PackedScene" uid="uid://cinl8lvhwgxtq" path="res://scenes/unit/players/player_well_rounded.tscn" id="3_asdgj"]
 [ext_resource type="Script" uid="uid://dg5w2m7po6hv0" path="res://scenes/arena/camera_2d.gd" id="5_asdgj"]
-[ext_resource type="PackedScene" uid="uid://cig8dyy763cgu" path="res://scenes/enemy/enemy_chaser_slow.tscn" id="6_ii07k"]
-[ext_resource type="Texture2D" uid="uid://d1ou504pylric" path="res://assets/sprites/Enemies/Enemy_1.png" id="7_6w4xk"]
+[ext_resource type="PackedScene" uid="uid://c527bik1pddb1" path="res://scenes/enemy/enemy_shooter.tscn" id="6_jx0ua"]
+[ext_resource type="Texture2D" uid="uid://4mllmwdfhmce" path="res://assets/sprites/Enemies/Enemy_4.png" id="7_ii07k"]
 [ext_resource type="Script" uid="uid://bxmnbydyn15na" path="res://resources/unit/unit_stats.gd" id="8_6w4xk"]
 
-[sub_resource type="Resource" id="Resource_2ml6w"]
+[sub_resource type="Resource" id="Resource_6w4xk"]
 script = ExtResource("8_6w4xk")
-name = "ChaserSlow"
+name = "Shooter"
 type = 1
-icon = ExtResource("7_6w4xk")
-health = 1000.0
-damage = 1.5
-speed = 250.0
+icon = ExtResource("7_ii07k")
+health = 800.0
+health_increase_per_wave = 2.0
+damage = 3.0
+damage_increase_per_wave = 1.5
 luck = 0
-block_chance = 3.0
+block_chance = 2.0
+gold_drop = 4
 metadata/_custom_type_script = "uid://bxmnbydyn15na"
 
 [node name="Arena" type="Node2D" unique_id=379034871 node_paths=PackedStringArray("player")]
@@ -42,6 +44,6 @@ texture = ExtResource("2_aj7ud")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=958367158]
 script = ExtResource("5_asdgj")
 
-[node name="EnemyChaserSlow" parent="." unique_id=1299243559 instance=ExtResource("6_ii07k")]
-position = Vector2(-521, 13)
-stats = SubResource("Resource_2ml6w")
+[node name="EnemyShooter" parent="." unique_id=1299243559 instance=ExtResource("6_jx0ua")]
+position = Vector2(-398, -6)
+stats = SubResource("Resource_6w4xk")
