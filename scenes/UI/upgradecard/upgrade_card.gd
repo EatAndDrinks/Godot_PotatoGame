@@ -1,0 +1,21 @@
+extends Panel
+class_name  UpgradeCard
+
+#使用set时，调用时 更改应用
+@export var item_data : ItemUpgrade : set = _set_data
+ 
+@onready var item_icon: TextureRect = %Icon
+@onready var item_name: Label = %Name 
+@onready var item_description: Label = %Description
+
+func _set_data(value : ItemUpgrade) -> void:
+	item_data = value
+	item_icon.texture = item_data.item_icon
+	item_name.text = item_data.item_name
+	item_description.text = item_data.description
+
+
+func _on_custom_button_pressed() -> void:
+	if item_data and is_instance_valid(Global.player):
+		item_data.apply_upgrade()
+		Global.on_upgrade_selected.emit()

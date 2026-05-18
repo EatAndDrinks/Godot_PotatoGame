@@ -156,5 +156,29 @@ debug_color = Color(1, 0, 0, 0.15686275)
 back_color = Color(0.13725491, 0.019607844, 0.02745098, 1)
 fill_color = Color(1, 0.2901961, 0.45490196, 1)
 
+[node name="HPRegenTimer" type="Timer" parent="." index="11" unique_id=919285152]
+autostart = true
+
+[node name="HPRegenTimer2" type="Timer" parent="." index="12" unique_id=1671681247]
+autostart = true
+
+[node name="HPRegenTimer3" type="Timer" parent="." index="13" unique_id=424262704]
+autostart = true
+
+[node name="HPRegenTimer4" type="Timer" parent="." index="14" unique_id=249374200]
+autostart = true
+
+[node name="HPRegenTimer5" type="Timer" parent="." index="15" unique_id=1038343173]
+autostart = true
+
+[node name="HPRegenTimer6" type="Timer" parent="." index="16" unique_id=331614711]
+autostart = true
+
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="TrailTimer" to="Visuals/Trail" method="_on_trail_timer_timeout"]
+[connection signal="timeout" from="HPRegenTimer" to="." method="_on_hp_regen_timer_timeout"]
+[connection signal="timeout" from="HPRegenTimer2" to="." method="_on_hp_regen_timer_timeout"]
+[connection signal="timeout" from="HPRegenTimer3" to="." method="_on_hp_regen_timer_timeout"]
+[connection signal="timeout" from="HPRegenTimer4" to="." method="_on_hp_regen_timer_timeout"]
+[connection signal="timeout" from="HPRegenTimer5" to="." method="_on_hp_regen_timer_timeout"]
+[connection signal="timeout" from="HPRegenTimer6" to="." method="_on_hp_regen_timer_timeout"]

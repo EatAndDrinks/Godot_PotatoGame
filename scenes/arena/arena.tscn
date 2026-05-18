@@ -8,6 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://c527bik1pddb1" path="res://scenes/enemy/enemy_shooter.tscn" id="6_jx0ua"]
 [ext_resource type="Texture2D" uid="uid://4mllmwdfhmce" path="res://assets/sprites/Enemies/Enemy_4.png" id="7_ii07k"]
 [ext_resource type="Script" uid="uid://bxmnbydyn15na" path="res://resources/unit/unit_stats.gd" id="8_6w4xk"]
+[ext_resource type="Script" uid="uid://t28ra5cdxfhj" path="res://scenes/arena/spawner.gd" id="9_6w4xk"]
+[ext_resource type="Script" uid="uid://bh5ln6ocumgd5" path="res://resources/waves/wave_data.gd" id="10_xgbxb"]
+[ext_resource type="Script" uid="uid://bi4yvd8ks1h1q" path="res://resources/waves/wave_unit_data.gd" id="12_w4nra"]
+[ext_resource type="PackedScene" uid="uid://cig8dyy763cgu" path="res://scenes/enemy/enemy_chaser_slow.tscn" id="13_t3vx8"]
+[ext_resource type="PackedScene" uid="uid://n7s7dxg2dgdy" path="res://scenes/enemy/enemy_chaser_mid.tscn" id="14_rhjlh"]
+[ext_resource type="PackedScene" uid="uid://c7dq3wxbp0dm7" path="res://scenes/enemy/enemy_chaser_fast.tscn" id="15_tp84n"]
+[ext_resource type="PackedScene" uid="uid://p5yao4swd3ka" path="res://scenes/UI/upgrade_panel/upgrade_panel.tscn" id="16_t3vx8"]
 
 [sub_resource type="Resource" id="Resource_6w4xk"]
 script = ExtResource("8_6w4xk")
@@ -22,6 +29,41 @@ luck = 0
 block_chance = 2.0
 gold_drop = 4
 metadata/_custom_type_script = "uid://bxmnbydyn15na"
+
+[sub_resource type="Resource" id="Resource_3lh5k"]
+script = ExtResource("12_w4nra")
+unit_scene = ExtResource("13_t3vx8")
+weight = 6.0
+metadata/_custom_type_script = "uid://bi4yvd8ks1h1q"
+
+[sub_resource type="Resource" id="Resource_aei4b"]
+script = ExtResource("12_w4nra")
+unit_scene = ExtResource("14_rhjlh")
+weight = 3.0
+metadata/_custom_type_script = "uid://bi4yvd8ks1h1q"
+
+[sub_resource type="Resource" id="Resource_w8f67"]
+script = ExtResource("12_w4nra")
+unit_scene = ExtResource("15_tp84n")
+weight = 1.0
+metadata/_custom_type_script = "uid://bi4yvd8ks1h1q"
+
+[sub_resource type="Resource" id="Resource_8kk48"]
+script = ExtResource("10_xgbxb")
+from = 1
+to = 5
+wave_time = 15.0
+units = Array[ExtResource("12_w4nra")]([SubResource("Resource_3lh5k"), SubResource("Resource_aei4b"), SubResource("Resource_w8f67")])
+spawn_type = 0
+min_spawn_time = 0.5
+max_spawn_time = 2.0
+metadata/_custom_type_script = "uid://bh5ln6ocumgd5"
+
+[sub_resource type="LabelSettings" id="LabelSettings_xgbxb"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_vmsrg"]
+font_size = 64
 
 [node name="Arena" type="Node2D" unique_id=379034871 node_paths=PackedStringArray("player")]
 script = ExtResource("1_aj7ud")
@@ -39,11 +81,54 @@ texture = ExtResource("1_5tue2")
 scale = Vector2(2, 2)
 texture = ExtResource("2_aj7ud")
 
-[node name="PlayerWellRounded" parent="." unique_id=1413972522 instance=ExtResource("3_asdgj")]
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=958367158]
 script = ExtResource("5_asdgj")
+
+[node name="PlayerWellRounded" parent="." unique_id=1413972522 instance=ExtResource("3_asdgj")]
 
 [node name="EnemyShooter" parent="." unique_id=1299243559 instance=ExtResource("6_jx0ua")]
 position = Vector2(-398, -6)
 stats = SubResource("Resource_6w4xk")
+
+[node name="Spawner" type="Node2D" parent="." unique_id=76762343]
+script = ExtResource("9_6w4xk")
+waves_data = Array[ExtResource("10_xgbxb")]([SubResource("Resource_8kk48")])
+
+[node name="SpawnTimer" type="Timer" parent="Spawner" unique_id=975784681]
+
+[node name="WaveTimer" type="Timer" parent="Spawner" unique_id=545266634]
+
+[node name="GUI" type="CanvasLayer" parent="." unique_id=1233836538]
+
+[node name="WaveIndexLabel" type="Label" parent="GUI" unique_id=1206698202]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -110.0
+offset_top = 20.0
+offset_right = 110.0
+offset_bottom = 97.333336
+grow_horizontal = 2
+text = "Wave 1"
+label_settings = SubResource("LabelSettings_xgbxb")
+
+[node name="WaveTimeLabel" type="Label" parent="GUI" unique_id=69567803]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -41.5
+offset_top = 90.0
+offset_right = 41.5
+offset_bottom = 167.33334
+grow_horizontal = 2
+text = "99"
+label_settings = SubResource("LabelSettings_vmsrg")
+
+[node name="UpgradePanel" parent="GUI" unique_id=470020836 instance=ExtResource("16_t3vx8")]
+visible = false
+
+[connection signal="on_wave_completed" from="Spawner" to="." method="_on_spawner_on_wave_completed"]
+[connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Spawner/WaveTimer" to="Spawner" method="_on_wave_timer_timeout"]

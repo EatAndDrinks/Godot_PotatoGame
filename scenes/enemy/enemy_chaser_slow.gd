@@ -13,6 +13,9 @@ var knockback_power : float
 
 
 func _process(delta: float) -> void:
+	if Global.game_pause:
+		return
+	
 	if not can_move:
 		return
 	
@@ -55,11 +58,11 @@ func apply_knockback(knock_dir : Vector2 , knock_power : float) -> void:
 	
 	knockback_timer.start()
 
-func _on_hurtbox_component_on_damaged(hitbox: HitboxComponent) -> void:
-	super._on_hurtbox_component_on_damaged(hitbox)
-	if hitbox.knockback_power > 0:
-		var dir : Vector2 = hitbox.source.global_position.direction_to(global_position)
-		apply_knockback(dir , hitbox.knockback_power)
+func destroy_enemy() -> void:
+	can_move = false
+	anim_player.play("die")
+	await anim_player.animation_finished
+	queue_free()
 
 func update_rotation():
 	if is_instance_valid(Global.player):
@@ -69,6 +72,12 @@ func update_rotation():
 			visuals.scale = Vector2(-0.5 , 0.5)
 	else:
 		return
+
+func _on_hurtbox_component_on_damaged(hitbox: HitboxComponent) -> void:
+	super._on_hurtbox_component_on_damaged(hitbox)
+	if hitbox.knockback_power > 0:
+		var dir : Vector2 = hitbox.source.global_position.direction_to(global_position)
+		apply_knockback(dir , hitbox.knockback_power)
 
 
 func _on_knockback_timer_timeout() -> void:

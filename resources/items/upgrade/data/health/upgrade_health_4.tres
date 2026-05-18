@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemUpgrade" format=3 uid="uid://dn3o40m87bpw8"]
+
+[ext_resource type="Texture2D" uid="uid://513vy8yuf2c3" path="res://assets/sprites/Upgrades/6.png" id="1_iucwa"]
+[ext_resource type="Script" uid="uid://bcejv2jsjvw4a" path="res://resources/items/upgrade/item_upgrade.gd" id="2_ki28n"]
+
+[resource]
+script = ExtResource("2_ki28n")
+value = 5.0
+description = "+ 5"
+stat_id = "health"
+item_name = "Health"
+item_icon = ExtResource("1_iucwa")
+item_tier = 1
+item_type = 1
+metadata/_custom_type_script = "uid://bcejv2jsjvw4a"

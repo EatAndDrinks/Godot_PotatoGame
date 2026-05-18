@@ -28,7 +28,7 @@ func _on_hurtbox_component_on_damaged(hitbox: HitboxComponent) -> void:
 	
 	if blocked:
 		Global.on_create_block_text.emit(self)
-		print("Blocked!")
+		#print("Blocked!")
 		return
 	
 	
@@ -36,7 +36,7 @@ func _on_hurtbox_component_on_damaged(hitbox: HitboxComponent) -> void:
 	set_flash_material()
 	health_component.take_damage(hitbox.damage)
 	Global.on_create_damage_text.emit(self , hitbox)
-	print("%s : %d" % [stats.name , health_component.cur_health])
+	#print("%s : %d" % [stats.name , health_component.cur_health])
 
 
 func _on_flash_timer_timeout() -> void:

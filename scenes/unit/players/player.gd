@@ -37,6 +37,8 @@ func _ready() -> void:
 #	运行函数
 #--------------
 func _process(delta: float) -> void:
+	if Global.game_pause:
+		return
 	
 	##移动
 	move_dir = Input.get_vector("move_left" , "move_right" , "move_up" , "move_down")
@@ -100,9 +102,23 @@ func add_weapon(data : ItemWeapon) -> void:
 func is_facing_right() -> bool:
 	return visuals.scale.x == -0.5
 
+func update_player_new_wave() -> void:
+	stats.health += stats.health_increase_per_wave
+	health_component.setup_healthcomponent(stats)
+
 
 func _on_dash_timer_timeout() -> void:
 	is_dash = false
 	visuals.modulate.a = 1.0
 	collision.set_deferred("disabled" , false)
 	dash_cooldown_timer.start()
+
+
+func _on_hp_regen_timer_timeout() -> void:
+	if health_component.cur_health <= 0:
+		return
+
+	if health_component.cur_health < stats.health:
+		var heal : float = stats.hp_regen
+		health_component.heal(heal)
+		Global.on_create_heal_text.emit(self , heal)

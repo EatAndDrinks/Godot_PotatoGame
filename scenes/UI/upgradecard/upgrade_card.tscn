@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://c8p60ersgyl7d"]
+
+[ext_resource type="StyleBox" uid="uid://dw7owmfoc5n3e" path="res://resources/styles/common_style.tres" id="1_7wc3m"]
+[ext_resource type="Script" uid="uid://d3psai3qbgaay" path="res://scenes/UI/upgradecard/upgrade_card.gd" id="1_vgcie"]
+[ext_resource type="Texture2D" uid="uid://dn68qq5evmvwa" path="res://assets/sprites/Upgrades/12.png" id="2_ukns0"]
+[ext_resource type="PackedScene" uid="uid://cwsnf6328g41u" path="res://scenes/UI/custom_button/custom_button.tscn" id="3_j85ls"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7wc3m"]
+font_size = 28
+
+[node name="UpgradeCard" type="Panel" unique_id=303820978]
+custom_minimum_size = Vector2(300, 220)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = ExtResource("1_7wc3m")
+script = ExtResource("1_vgcie")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=587000990]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Control" type="Control" parent="MarginContainer" unique_id=2138886344]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/Control" unique_id=1080729862]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_ukns0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="MarginContainer/Control" unique_id=46007392]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 100.0
+offset_top = 10.0
+offset_right = 284.0
+offset_bottom = 43.833332
+text = "damage"
+label_settings = SubResource("LabelSettings_7wc3m")
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="MarginContainer/Control" unique_id=560610891]
+unique_name_in_owner = true
+modulate = Color(0.827451, 0.9098039, 0.17254902, 1)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 52.0
+offset_right = 284.0
+offset_bottom = 85.83333
+text = "+1"
+label_settings = SubResource("LabelSettings_7wc3m")
+vertical_alignment = 1
+
+[node name="CustomButton" parent="MarginContainer/Control" unique_id=1673882683 instance=ExtResource("3_j85ls")]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 1
+offset_left = -130.0
+offset_top = -58.0
+offset_right = 130.0
+
+[connection signal="pressed" from="MarginContainer/Control/CustomButton" to="." method="_on_custom_button_pressed"]

@@ -16,7 +16,10 @@ var weapon_spread : float
 func _ready() -> void:
 	atk_start_pos = sprite.position
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
+	if Global.game_pause:
+		return
+	
 	if not is_attacking:
 		if targets.size() > 0:
 			update_closest_target()

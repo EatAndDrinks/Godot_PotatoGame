@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://p5yao4swd3ka"]
+
+[ext_resource type="PackedScene" uid="uid://c4kxsko37aeim" path="res://scenes/UI/statscontainer/stats_container.tscn" id="1_0m44w"]
+[ext_resource type="Script" uid="uid://bli4nrdp2gbyq" path="res://scenes/UI/upgrade_panel/upgrade_panel.gd" id="1_lxk26"]
+[ext_resource type="PackedScene" uid="uid://c8p60ersgyl7d" path="res://scenes/UI/upgradecard/upgrade_card.tscn" id="1_yv41w"]
+[ext_resource type="Script" uid="uid://bcejv2jsjvw4a" path="res://resources/items/upgrade/item_upgrade.gd" id="2_d1kmm"]
+[ext_resource type="Resource" uid="uid://b5aun2ll8rwg" path="res://resources/items/upgrade/data/block/upgrade_block_1.tres" id="3_7u0on"]
+[ext_resource type="Resource" uid="uid://cltbcd86n6qd4" path="res://resources/items/upgrade/data/damage/upgrade_damage_1.tres" id="4_5iugg"]
+[ext_resource type="Resource" uid="uid://bpejm1b7biijl" path="res://resources/items/upgrade/data/harvesting/upgrade_harvesting_1.tres" id="5_wvc7d"]
+[ext_resource type="Resource" uid="uid://qwg7cikjwtku" path="res://resources/items/upgrade/data/health/upgrade_health_1.tres" id="6_xo0xw"]
+[ext_resource type="Resource" uid="uid://bl2vk3iot17lv" path="res://resources/items/upgrade/data/hp_regen/upgrade_hp_regen_1.tres" id="7_fw5dd"]
+[ext_resource type="Resource" uid="uid://b00amvommdyom" path="res://resources/items/upgrade/data/life_steal/upgrade_life_steal_1.tres" id="8_7wj15"]
+[ext_resource type="Resource" uid="uid://cq0x2ho17pawo" path="res://resources/items/upgrade/data/luck/upgrade_luck_1.tres" id="9_riycw"]
+[ext_resource type="Resource" uid="uid://qd0mcfbj2vce" path="res://resources/items/upgrade/data/speed/upgrade_speed_1.tres" id="10_2jsjs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lxk26"]
+font_size = 120
+
+[node name="UpgradePanel" type="Panel" unique_id=470020836]
+self_modulate = Color(0.5449743, 0.54497427, 0.54497427, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lxk26")
+upgrade_list = Array[ExtResource("2_d1kmm")]([ExtResource("3_7u0on"), ExtResource("4_5iugg"), ExtResource("5_wvc7d"), ExtResource("6_xo0xw"), ExtResource("7_fw5dd"), ExtResource("8_7wj15"), ExtResource("9_riycw"), ExtResource("10_2jsjs")])
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1808511037]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1863262662]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=348520033]
+layout_mode = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1379739486]
+layout_mode = 2
+text = "Wave completed"
+label_settings = SubResource("LabelSettings_lxk26")
+horizontal_alignment = 1
+
+[node name="ItemContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=538241695]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="UpgradeCard" parent="MarginContainer/HBoxContainer/VBoxContainer/ItemContainer" unique_id=303820978 instance=ExtResource("1_yv41w")]
+layout_mode = 2
+
+[node name="UpgradeCard2" parent="MarginContainer/HBoxContainer/VBoxContainer/ItemContainer" unique_id=685661591 instance=ExtResource("1_yv41w")]
+layout_mode = 2
+
+[node name="UpgradeCard3" parent="MarginContainer/HBoxContainer/VBoxContainer/ItemContainer" unique_id=711119684 instance=ExtResource("1_yv41w")]
+layout_mode = 2
+
+[node name="UpgradeCard4" parent="MarginContainer/HBoxContainer/VBoxContainer/ItemContainer" unique_id=211630258 instance=ExtResource("1_yv41w")]
+layout_mode = 2
+
+[node name="StatsContainer" parent="MarginContainer/HBoxContainer" unique_id=1717008576 instance=ExtResource("1_0m44w")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
