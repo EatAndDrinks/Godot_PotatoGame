@@ -41,6 +41,7 @@ func create_floating_text(unit : Node2D) -> Floatingtext:
 	return instance
 
 func show_upgrade_panel() -> void:
+	upgrade_panel.load_upgrades(spawner.wave_index)
 	upgrade_panel.show()
 
 func start_new_wave() -> void:

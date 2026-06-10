@@ -7,15 +7,16 @@ const UPGRADE_CARD_SCENE = preload("uid://c8p60ersgyl7d")
 
 @onready var item_container: HBoxContainer = %ItemContainer
 
-func _ready() -> void:
-	load_upgrades()
 
-func load_upgrades() -> void:
+
+func load_upgrades(current_wave : int) -> void:
 	for child in item_container.get_children():
 		child.queue_free()
 	
-	for i in 4:
-		var random_upg : ItemUpgrade = upgrade_list.pick_random()
+	var config := Global.UPGRADE_PROBABILITY_CONFIG
+	var selected_upgrades := Global.select_item_for_offer(upgrade_list , current_wave , config)
+	
+	for random_upg : ItemUpgrade in selected_upgrades:
 		var card_instance : UpgradeCard = UPGRADE_CARD_SCENE.instantiate()
 		item_container.add_child(card_instance)
 		card_instance.item_data = random_upg

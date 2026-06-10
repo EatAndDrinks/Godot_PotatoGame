@@ -17,6 +17,7 @@ func execute_attack() -> void:
 	var attack_pos : Vector2 = Vector2(weapon.atk_start_pos.x + weapon.data.stats.max_shoot_distance , weapon.atk_start_pos.y)
 	tween.tween_property(weapon.sprite , "position" , attack_pos , weapon.data.stats.attack_duration)
 	
+	apply_life_steal()
 	#使武器回正时不攻击
 	#tween.tween_callback(hitbox.disable)
 	

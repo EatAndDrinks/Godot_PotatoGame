@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c8p60ersgyl7d"]
 
-[ext_resource type="StyleBox" uid="uid://dw7owmfoc5n3e" path="res://resources/styles/common_style.tres" id="1_7wc3m"]
+[ext_resource type="StyleBox" uid="uid://bprixxc3qmp52" path="res://styles/rare_style.tres" id="1_7wc3m"]
 [ext_resource type="Script" uid="uid://d3psai3qbgaay" path="res://scenes/UI/upgradecard/upgrade_card.gd" id="1_vgcie"]
 [ext_resource type="Texture2D" uid="uid://dn68qq5evmvwa" path="res://assets/sprites/Upgrades/12.png" id="2_ukns0"]
 [ext_resource type="PackedScene" uid="uid://cwsnf6328g41u" path="res://scenes/UI/custom_button/custom_button.tscn" id="3_j85ls"]
