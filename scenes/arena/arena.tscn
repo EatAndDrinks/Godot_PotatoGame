@@ -14,7 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://cig8dyy763cgu" path="res://scenes/enemy/enemy_chaser_slow.tscn" id="13_t3vx8"]
 [ext_resource type="PackedScene" uid="uid://n7s7dxg2dgdy" path="res://scenes/enemy/enemy_chaser_mid.tscn" id="14_rhjlh"]
 [ext_resource type="PackedScene" uid="uid://c7dq3wxbp0dm7" path="res://scenes/enemy/enemy_chaser_fast.tscn" id="15_tp84n"]
+[ext_resource type="PackedScene" uid="uid://dyp3203dbfg00" path="res://scenes/UI/shop_panel/shop_panel.tscn" id="16_rhjlh"]
 [ext_resource type="PackedScene" uid="uid://p5yao4swd3ka" path="res://scenes/UI/upgrade_panel/upgrade_panel.tscn" id="16_t3vx8"]
+[ext_resource type="PackedScene" uid="uid://dkwvwxq283112" path="res://scenes/UI/coins_bag/coins_bag.tscn" id="17_rhjlh"]
 
 [sub_resource type="Resource" id="Resource_6w4xk"]
 script = ExtResource("8_6w4xk")
@@ -52,7 +54,7 @@ metadata/_custom_type_script = "uid://bi4yvd8ks1h1q"
 script = ExtResource("10_xgbxb")
 from = 1
 to = 5
-wave_time = 3.0
+wave_time = 10.0
 units = Array[ExtResource("12_w4nra")]([SubResource("Resource_3lh5k"), SubResource("Resource_aei4b"), SubResource("Resource_w8f67")])
 spawn_type = 0
 min_spawn_time = 0.5
@@ -127,8 +129,17 @@ text = "99"
 label_settings = SubResource("LabelSettings_vmsrg")
 
 [node name="UpgradePanel" parent="GUI" unique_id=470020836 instance=ExtResource("16_t3vx8")]
+unique_name_in_owner = true
 visible = false
+
+[node name="ShopPanel" parent="GUI" unique_id=1168318628 instance=ExtResource("16_rhjlh")]
+unique_name_in_owner = true
+visible = false
+
+[node name="CoinsBag" parent="GUI" unique_id=1592138801 instance=ExtResource("17_rhjlh")]
+unique_name_in_owner = true
 
 [connection signal="on_wave_completed" from="Spawner" to="." method="_on_spawner_on_wave_completed"]
 [connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Spawner/WaveTimer" to="Spawner" method="_on_wave_timer_timeout"]
+[connection signal="on_shop_next_wave" from="GUI/ShopPanel" to="." method="_on_shop_panel_on_shop_next_wave"]

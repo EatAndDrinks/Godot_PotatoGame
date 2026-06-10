@@ -2,8 +2,10 @@ extends Node
 
 signal on_create_block_text(unit : Node2D)
 signal on_create_damage_text(unit : Node2D , hitbox : HitboxComponent)
-signal on_upgrade_selected 
 signal on_create_heal_text(unit : Node2D , heal : float)
+
+signal on_enemy_died(enemy : Enemy)
+signal on_upgrade_selected 
 
 const FLASH_MATERIAL = preload("uid://d3if2ah6hrkol")
 const FLOATING_TEXT_SCENES = preload("uid://cw4nn1b3lyjka")
@@ -12,12 +14,19 @@ const COMMON_STYLE = preload("uid://dw7owmfoc5n3e")
 const EPIC_STYLE = preload("uid://cb0a3xhvx2na0")
 const LEGENDARY_STYLE = preload("uid://cmepvf1ww0jpo")
 const RARE_STYLE = preload("uid://bprixxc3qmp52")
+const COINS = preload("uid://c6f8g40vsu58h")
 
 
 const UPGRADE_PROBABILITY_CONFIG = {
 	"rare" : {"start_wave" : 2 , "base_multi" : 0.06},
 	"epic" : {"start_wave" : 4 , "base_multi" : 0.02},
 	"legendary" : {"start_wave" : 7 , "base_multi" : 0.005}
+}
+
+const SHOP_PROBABILITY_CONFIG = {
+	"rare" : {"start_wave" : 2 , "base_multi" : 0.10},
+	"epic" : {"start_wave" : 4 , "base_multi" : 0.06},
+	"legendary" : {"start_wave" : 7 , "base_multi" : 0.01}
 }
 
 enum UpgradeTier {

@@ -1,0 +1,335 @@
+[gd_scene format=3 uid="uid://dyp3203dbfg00"]
+
+[ext_resource type="Script" uid="uid://cac45d1t5fr2x" path="res://scenes/UI/shop_panel/shop_panel.gd" id="1_b0oqu"]
+[ext_resource type="PackedScene" uid="uid://b241whdvl6y1s" path="res://scenes/UI/shop-card/shop_card.tscn" id="2_4sm0f"]
+[ext_resource type="Script" uid="uid://cwiel26g1880j" path="res://resources/items/item_base.gd" id="2_v7oek"]
+[ext_resource type="PackedScene" uid="uid://c4kxsko37aeim" path="res://scenes/UI/statscontainer/stats_container.tscn" id="3_od4xj"]
+[ext_resource type="Resource" uid="uid://dnqnsn2hjy4ml" path="res://resources/items/weapons/fight/axe/item_axe_1.tres" id="3_x65dn"]
+[ext_resource type="StyleBox" uid="uid://dw7owmfoc5n3e" path="res://styles/common_style.tres" id="4_mtu3a"]
+[ext_resource type="Resource" uid="uid://bxc2nmkf2axva" path="res://resources/items/weapons/fight/axe/item_axe_2.tres" id="4_sqhoa"]
+[ext_resource type="Resource" uid="uid://ylye03iu0uit" path="res://resources/items/weapons/fight/axe/item_axe_3.tres" id="5_melx5"]
+[ext_resource type="Resource" uid="uid://rdyu6mo1ywaq" path="res://resources/items/weapons/fight/axe/item_axe_4.tres" id="6_0v073"]
+[ext_resource type="Resource" uid="uid://c80m8clk8r2s7" path="res://resources/items/weapons/fight/chainsaw/item_chainsaw_1.tres" id="7_cww0w"]
+[ext_resource type="Resource" uid="uid://b41i8lrrfj3ce" path="res://resources/items/weapons/fight/chainsaw/item_chainsaw_2.tres" id="8_ex0kr"]
+[ext_resource type="Resource" uid="uid://b0laepbretclp" path="res://resources/items/weapons/fight/chainsaw/item_chainsaw_3.tres" id="9_stgsf"]
+[ext_resource type="Resource" uid="uid://c43raeiw5d62j" path="res://resources/items/weapons/fight/chainsaw/item_chainsaw_4.tres" id="10_x8hi1"]
+[ext_resource type="Resource" uid="uid://c5v11cp3oaj5o" path="res://resources/items/weapons/fight/mace/item_mace_1.tres" id="11_x2bdl"]
+[ext_resource type="Resource" uid="uid://bcb8kdn17xtka" path="res://resources/items/weapons/fight/mace/item_mace_2.tres" id="12_83ntt"]
+[ext_resource type="Resource" uid="uid://di86mm3i1rh6f" path="res://resources/items/weapons/fight/mace/item_mace_3.tres" id="13_7gemv"]
+[ext_resource type="Resource" uid="uid://dd8am3bgob2di" path="res://resources/items/weapons/fight/mace/item_mace_4.tres" id="14_2pw1r"]
+[ext_resource type="Resource" uid="uid://617p5pkaa1cg" path="res://resources/items/weapons/fight/punch/item_punch_1.tres" id="15_cwphu"]
+[ext_resource type="Resource" uid="uid://lcjbxj6yfuq6" path="res://resources/items/weapons/fight/punch/item_punch_2.tres" id="16_uadjr"]
+[ext_resource type="Resource" uid="uid://cnwflo5wdbu3b" path="res://resources/items/weapons/fight/punch/item_punch_3.tres" id="17_vrkbs"]
+[ext_resource type="Resource" uid="uid://ckp1nbvgiqy54" path="res://resources/items/weapons/fight/punch/item_punch_4.tres" id="18_gudq8"]
+[ext_resource type="Resource" uid="uid://dh7acvrcfkbia" path="res://resources/items/weapons/fight/sword/item_sword_1.tres" id="19_ba15j"]
+[ext_resource type="Resource" uid="uid://c5k3pogyynfrs" path="res://resources/items/weapons/fight/sword/item_sword_2.tres" id="20_a5b3y"]
+[ext_resource type="Resource" uid="uid://cj04sy455hyrx" path="res://resources/items/weapons/fight/sword/item_sword_3.tres" id="21_4hp11"]
+[ext_resource type="Resource" uid="uid://cy084shwbf3k2" path="res://resources/items/weapons/fight/sword/item_sword_4.tres" id="22_cpx8x"]
+[ext_resource type="Resource" uid="uid://betak1xds04ph" path="res://resources/items/weapons/fight/wand/item_wand_1.tres" id="23_eymkb"]
+[ext_resource type="Resource" uid="uid://bnaavoskxc7qs" path="res://resources/items/weapons/fight/wand/item_wand_2.tres" id="24_8bb2v"]
+[ext_resource type="Resource" uid="uid://cvnh16uixqmj7" path="res://resources/items/weapons/fight/wand/item_wand_3.tres" id="25_qmhj7"]
+[ext_resource type="Resource" uid="uid://g6fqo45fbytp" path="res://resources/items/weapons/fight/wand/item_wand_4.tres" id="26_6re3h"]
+[ext_resource type="Resource" uid="uid://hksqva3af48f" path="res://resources/items/weapons/shoot/laser/item_ laser_1.tres" id="27_br4lq"]
+[ext_resource type="Resource" uid="uid://d2i1c2bkyb7rt" path="res://resources/items/weapons/shoot/laser/item_ laser_2.tres" id="28_ql274"]
+[ext_resource type="Resource" uid="uid://3whs7hv2ubs8" path="res://resources/items/weapons/shoot/laser/item_ laser_3.tres" id="29_jckxi"]
+[ext_resource type="Resource" uid="uid://drlyj1jtlmmeh" path="res://resources/items/weapons/shoot/laser/item_ laser_4.tres" id="30_po88l"]
+[ext_resource type="Resource" uid="uid://b6v2h3o572xf6" path="res://resources/items/weapons/shoot/pistol/item_pistol_1.tres" id="31_f8pv6"]
+[ext_resource type="Resource" uid="uid://nx238vsck7fi" path="res://resources/items/weapons/shoot/pistol/item_pistol_2.tres" id="32_16oqv"]
+[ext_resource type="Resource" uid="uid://btunfvxdk0ysl" path="res://resources/items/weapons/shoot/pistol/item_pistol_3.tres" id="33_il38b"]
+[ext_resource type="Resource" uid="uid://ds11n5ov3l4ey" path="res://resources/items/weapons/shoot/pistol/item_pistol_4.tres" id="34_k2206"]
+[ext_resource type="Resource" uid="uid://o4l7www4lfxo" path="res://resources/items/weapons/shoot/revovler/item_revovler_1.tres" id="35_if0n6"]
+[ext_resource type="Resource" uid="uid://c1jf31ctlqnle" path="res://resources/items/weapons/shoot/revovler/item_revovler_2.tres" id="36_ilvus"]
+[ext_resource type="Resource" uid="uid://c2k7m21nxvob8" path="res://resources/items/weapons/shoot/revovler/item_revovler_3.tres" id="37_5xwec"]
+[ext_resource type="Resource" uid="uid://b3g4bry2ckki2" path="res://resources/items/weapons/shoot/revovler/item_revovler_4.tres" id="38_fr6om"]
+[ext_resource type="Resource" uid="uid://c308y7lmsfhhj" path="res://resources/items/weapons/shoot/shotgun/item_shotgun_1.tres" id="39_b16u3"]
+[ext_resource type="Resource" uid="uid://chwuid6pq71y2" path="res://resources/items/weapons/shoot/shotgun/item_shotgun_2.tres" id="40_bxyv7"]
+[ext_resource type="Resource" uid="uid://dc8s2b8m5bytf" path="res://resources/items/weapons/shoot/shotgun/item_shotgun_3.tres" id="41_m8a45"]
+[ext_resource type="Resource" uid="uid://dwdofbhb30n77" path="res://resources/items/weapons/shoot/shotgun/item_shotgun_4.tres" id="42_3hlci"]
+[ext_resource type="Resource" uid="uid://cx1q83vpf2e7j" path="res://resources/items/weapons/shoot/smg/item_smg_1.tres" id="43_ydn86"]
+[ext_resource type="Resource" uid="uid://bx1vceg8rqnjs" path="res://resources/items/weapons/shoot/smg/item_smg_2.tres" id="44_hmvgx"]
+[ext_resource type="Resource" uid="uid://byw3nyu2j8xt" path="res://resources/items/weapons/shoot/smg/item_smg_3.tres" id="45_02fa4"]
+[ext_resource type="Resource" uid="uid://botaxxyf35rjl" path="res://resources/items/weapons/shoot/smg/item_smg_4.tres" id="46_rn7od"]
+[ext_resource type="PackedScene" uid="uid://dkwvwxq283112" path="res://scenes/UI/coins_bag/coins_bag.tscn" id="50_x65dn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ixqb"]
+bg_color = Color(0.20392157, 0.20392157, 0.20392157, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_od4xj"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_cv46w"]
+font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xnq2e"]
+bg_color = Color(0.23529412, 0.6039216, 0.23137255, 0.6)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i337e"]
+bg_color = Color(0.18431373, 0.4392157, 0.43529412, 0.6)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygah5"]
+bg_color = Color(0.8980392, 0.24313726, 0.3137255, 0.6)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="ShopPanel" type="Panel" unique_id=1168318628]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ixqb")
+script = ExtResource("1_b0oqu")
+shop_items = Array[ExtResource("2_v7oek")]([ExtResource("3_x65dn"), ExtResource("4_sqhoa"), ExtResource("5_melx5"), ExtResource("6_0v073"), ExtResource("7_cww0w"), ExtResource("8_ex0kr"), ExtResource("9_stgsf"), ExtResource("10_x8hi1"), ExtResource("11_x2bdl"), ExtResource("12_83ntt"), ExtResource("13_7gemv"), ExtResource("14_2pw1r"), ExtResource("15_cwphu"), ExtResource("16_uadjr"), ExtResource("17_vrkbs"), ExtResource("18_gudq8"), ExtResource("19_ba15j"), ExtResource("20_a5b3y"), ExtResource("21_4hp11"), ExtResource("22_cpx8x"), ExtResource("23_eymkb"), ExtResource("24_8bb2v"), ExtResource("25_qmhj7"), ExtResource("26_6re3h"), ExtResource("27_br4lq"), ExtResource("28_ql274"), ExtResource("29_jckxi"), ExtResource("30_po88l"), ExtResource("31_f8pv6"), ExtResource("32_16oqv"), ExtResource("33_il38b"), ExtResource("34_k2206"), ExtResource("35_if0n6"), ExtResource("36_ilvus"), ExtResource("37_5xwec"), ExtResource("38_fr6om"), ExtResource("39_b16u3"), ExtResource("40_bxyv7"), ExtResource("41_m8a45"), ExtResource("42_3hlci"), ExtResource("43_ydn86"), ExtResource("44_hmvgx"), ExtResource("45_02fa4"), ExtResource("46_rn7od")])
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1378513949]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="MarginContainer" unique_id=1696801590]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/Control" unique_id=1249852502]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.5
+offset_top = 15.0
+offset_right = 89.5
+offset_bottom = 92.333336
+grow_horizontal = 2
+text = "shop"
+label_settings = SubResource("LabelSettings_od4xj")
+horizontal_alignment = 1
+
+[node name="ItemsContainer" type="HBoxContainer" parent="MarginContainer/Control" unique_id=705838258]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1328, 400)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 178.0
+offset_right = 1348.0
+offset_bottom = 578.0
+theme_override_constants/separation = 16
+
+[node name="ShopCard" parent="MarginContainer/Control/ItemsContainer" unique_id=1832511908 instance=ExtResource("2_4sm0f")]
+layout_mode = 2
+
+[node name="ShopCard2" parent="MarginContainer/Control/ItemsContainer" unique_id=1496674574 instance=ExtResource("2_4sm0f")]
+layout_mode = 2
+
+[node name="ShopCard3" parent="MarginContainer/Control/ItemsContainer" unique_id=1885576562 instance=ExtResource("2_4sm0f")]
+layout_mode = 2
+
+[node name="ShopCard4" parent="MarginContainer/Control/ItemsContainer" unique_id=28748061 instance=ExtResource("2_4sm0f")]
+layout_mode = 2
+
+[node name="StatsContainer" parent="MarginContainer/Control" unique_id=1717008576 instance=ExtResource("3_od4xj")]
+layout_mode = 0
+offset_left = 1380.0
+offset_top = 178.0
+offset_right = 1860.0
+offset_bottom = 728.0
+
+[node name="Passives" type="VBoxContainer" parent="MarginContainer/Control" unique_id=1409064397]
+custom_minimum_size = Vector2(752, 250)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 768.0
+offset_right = 772.0
+offset_bottom = 1018.0
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/Control/Passives" unique_id=228511231]
+layout_mode = 2
+text = "items"
+label_settings = SubResource("LabelSettings_cv46w")
+horizontal_alignment = 1
+
+[node name="PassiveContainer" type="GridContainer" parent="MarginContainer/Control/Passives" unique_id=536788899]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 8
+
+[node name="ItemCard" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer" unique_id=882511244]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="ItemCard2" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer" unique_id=1730688759]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="ItemCard3" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer" unique_id=1697909251]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="ItemCard4" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer" unique_id=1391738770]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="ItemCard5" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer" unique_id=1537465964]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="ItemCard6" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer" unique_id=364366895]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="ItemCard7" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer" unique_id=778813345]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="ItemCard8" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer" unique_id=693734363]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="ItemCard9" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer" unique_id=1892479033]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="ItemCard10" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer" unique_id=545568368]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="ItemCard11" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer" unique_id=2079053298]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="ItemCard12" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer" unique_id=822049015]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="ItemCard13" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer" unique_id=1711181233]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="ItemCard14" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer" unique_id=112866247]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="ItemCard15" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer" unique_id=819752775]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="ItemCard16" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer" unique_id=1830665004]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="Weapons" type="VBoxContainer" parent="MarginContainer/Control" unique_id=1909592313]
+custom_minimum_size = Vector2(350, 300)
+layout_mode = 0
+offset_left = 998.0
+offset_top = 768.0
+offset_right = 1348.0
+offset_bottom = 1068.0
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/Control/Weapons" unique_id=567846894]
+layout_mode = 2
+text = "weapons"
+label_settings = SubResource("LabelSettings_cv46w")
+horizontal_alignment = 1
+
+[node name="WeaponsContainer" type="GridContainer" parent="MarginContainer/Control/Weapons" unique_id=490099184]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 3
+
+[node name="ItemCard" type="Button" parent="MarginContainer/Control/Weapons/WeaponsContainer" unique_id=2108353882]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="ItemCard2" type="Button" parent="MarginContainer/Control/Weapons/WeaponsContainer" unique_id=1910201195]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="ItemCard3" type="Button" parent="MarginContainer/Control/Weapons/WeaponsContainer" unique_id=231937069]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="ItemCard4" type="Button" parent="MarginContainer/Control/Weapons/WeaponsContainer" unique_id=975297545]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="ItemCard5" type="Button" parent="MarginContainer/Control/Weapons/WeaponsContainer" unique_id=1761532488]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="ItemCard6" type="Button" parent="MarginContainer/Control/Weapons/WeaponsContainer" unique_id=214139721]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_mtu3a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Control" unique_id=240772257]
+custom_minimum_size = Vector2(350, 300)
+layout_mode = 0
+offset_left = 1440.0
+offset_top = 740.0
+offset_right = 1790.0
+offset_bottom = 1040.0
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="NewWaveButton" type="Button" parent="MarginContainer/Control/VBoxContainer" unique_id=836224835]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_xnq2e")
+text = "next wave"
+
+[node name="CombineButton" type="Button" parent="MarginContainer/Control/VBoxContainer" unique_id=2071135480]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_i337e")
+text = "conbine"
+
+[node name="SellButton3" type="Button" parent="MarginContainer/Control/VBoxContainer" unique_id=379573811]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_ygah5")
+text = "sell"
+
+[node name="CoinsBag" parent="MarginContainer/Control" unique_id=1592138801 instance=ExtResource("50_x65dn")]
+visible = false
+layout_mode = 0
+
+[connection signal="pressed" from="MarginContainer/Control/VBoxContainer/NewWaveButton" to="." method="_on_new_wave_button_pressed"]

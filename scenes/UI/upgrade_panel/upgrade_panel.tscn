@@ -53,16 +53,19 @@
 [ext_resource type="Resource" uid="uid://rf0wnh3cnu5x" path="res://resources/items/upgrade/data/speed/upgrade_speed_5.tres" id="49_j2g12"]
 [ext_resource type="Resource" uid="uid://b0jp3l2pkeqfd" path="res://resources/items/upgrade/data/speed/upgrade_speed_6.tres" id="50_mfk36"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dq0y8"]
+bg_color = Color(0.20392157, 0.20392157, 0.20392157, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_lxk26"]
 font_size = 120
 
 [node name="UpgradePanel" type="Panel" unique_id=470020836]
-self_modulate = Color(0.5449743, 0.54497427, 0.54497427, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dq0y8")
 script = ExtResource("1_lxk26")
 upgrade_list = Array[ExtResource("2_d1kmm")]([ExtResource("3_7u0on"), ExtResource("4_dq0y8"), ExtResource("5_5ntek"), ExtResource("6_l5tmo"), ExtResource("7_pi6bs"), ExtResource("8_8d017"), ExtResource("4_5iugg"), ExtResource("10_6ggg3"), ExtResource("11_cvbse"), ExtResource("12_ghyqq"), ExtResource("13_gvbdk"), ExtResource("14_va5gq"), ExtResource("5_wvc7d"), ExtResource("16_33iqg"), ExtResource("17_jvu4j"), ExtResource("18_2afxn"), ExtResource("19_x6xlv"), ExtResource("20_01uhe"), ExtResource("6_xo0xw"), ExtResource("22_lhtpv"), ExtResource("23_3lvaq"), ExtResource("24_fv7c6"), ExtResource("25_cko3s"), ExtResource("26_o0rqu"), ExtResource("7_fw5dd"), ExtResource("28_hb6pv"), ExtResource("29_hfvxt"), ExtResource("30_gmc5u"), ExtResource("31_826f7"), ExtResource("32_xctdo"), ExtResource("8_7wj15"), ExtResource("34_rdvvn"), ExtResource("35_mb74q"), ExtResource("36_7i43d"), ExtResource("37_ynmo6"), ExtResource("38_2wot6"), ExtResource("9_riycw"), ExtResource("40_1eg2d"), ExtResource("41_qdojc"), ExtResource("42_lb65w"), ExtResource("43_bxf1f"), ExtResource("44_mejpr"), ExtResource("10_2jsjs"), ExtResource("46_8reuw"), ExtResource("47_qem3u"), ExtResource("48_5ud8y"), ExtResource("49_j2g12"), ExtResource("50_mfk36")])
 

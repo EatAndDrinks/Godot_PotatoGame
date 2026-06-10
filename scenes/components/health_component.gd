@@ -38,5 +38,5 @@ func heal(value : float) -> void:
 	on_health_change.emit(cur_health , max_health)
 
 func die() -> void:
-	##死亡触发函数
+	#死亡触发函数
 	owner.queue_free()
