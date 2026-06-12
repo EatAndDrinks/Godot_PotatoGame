@@ -1,10 +1,4 @@
-[gd_scene format=3 uid="uid://65aq63i0uu6k"]
-
-[ext_resource type="Script" uid="uid://dulvw430fcvfp" path="res://scenes/weapons/weapon.gd" id="1_v4xn6"]
-[ext_resource type="Texture2D" uid="uid://cyh23wqn8vcac" path="res://assets/sprites/Weapons/Icons/weapon_punch_icon.png" id="3_omet7"]
-
-[sub_resource type="Shader" id="Shader_uvw4m"]
-code = "/* 
+/* 
 Rainbow outline by @Farfalk and @ThePadDev, And Edit for @LURGX in 2022
 
 Apply to canvas items with transparent backgrounds.
@@ -50,42 +44,3 @@ void fragment() {
 		COLOR = mix(color, outline_color , outline - color.a);
 	}
 }
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_omet7"]
-resource_local_to_scene = true
-shader = SubResource("Shader_uvw4m")
-shader_parameter/rainbow = false
-shader_parameter/outline_color = Color(1, 1, 1, 1)
-shader_parameter/line_scale = 8.00000038
-shader_parameter/frequency = 0.5
-shader_parameter/light_offset = 0.5
-shader_parameter/alpha = 1.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_vffjk"]
-radius = 150.0
-
-[node name="WeaponBase" type="Node2D" unique_id=2104126142]
-script = ExtResource("1_v4xn6")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1674848682]
-z_index = 1
-material = SubResource("ShaderMaterial_omet7")
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_omet7")
-
-[node name="RangeArea" type="Area2D" parent="." unique_id=2049776213]
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RangeArea" unique_id=1916667082]
-unique_name_in_owner = true
-shape = SubResource("CircleShape2D_vffjk")
-
-[node name="CooldownTimer" type="Timer" parent="." unique_id=1651648566]
-one_shot = true
-
-[node name="WeaponBehavior" type="Node2D" parent="." unique_id=1063028993]
-
-[connection signal="area_entered" from="RangeArea" to="." method="_on_range_area_area_entered"]
-[connection signal="area_exited" from="RangeArea" to="." method="_on_range_area_area_exited"]

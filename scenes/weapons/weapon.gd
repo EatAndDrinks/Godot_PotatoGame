@@ -36,6 +36,7 @@ func _process(delta: float) -> void:
 func setup_weapon(data : ItemWeapon) -> void:
 	self.data = data
 	collision.shape.radius = data.stats.max_shoot_distance
+	apply_tier_outline()
 
 func can_use_weapon() -> bool:
 	return cooldown_timer.is_stopped() and closest_traget
@@ -111,7 +112,13 @@ func get_rotation_to_target() -> float:
 	var rot := global_position.direction_to(closest_traget.global_position).angle()
 	return rot 
 
-
+func apply_tier_outline() -> void:
+	if data.item_tier == Global.UpgradeTier.COMMON:
+		sprite.material = null
+		return
+	
+	var outline_color := Global.TIER_COLOR[data.item_tier]
+	sprite.material.set_shader_parameter("outline_color" ,outline_color)
 
 func _on_range_area_area_entered(area: Area2D) -> void:
 	targets.push_back(area)

@@ -9,6 +9,7 @@ signal on_upgrade_selected
 
 const FLASH_MATERIAL = preload("uid://d3if2ah6hrkol")
 const FLOATING_TEXT_SCENES = preload("uid://cw4nn1b3lyjka")
+const ITEM_CARD_SCENE = preload("uid://bevbjtf4epukv")
 
 const COMMON_STYLE = preload("uid://dw7owmfoc5n3e")
 const EPIC_STYLE = preload("uid://cb0a3xhvx2na0")
@@ -29,6 +30,12 @@ const SHOP_PROBABILITY_CONFIG = {
 	"legendary" : {"start_wave" : 7 , "base_multi" : 0.01}
 }
 
+const TIER_COLOR : Dictionary[UpgradeTier , Color] = {
+	UpgradeTier.RARE: Color(0.0 , 0.557 , 0.741),
+	UpgradeTier.EPIC: Color(0.478 , 0.251 , 0.71),
+	UpgradeTier.LEGENDARY: Color(0.906 , 0.212 , 0.212),
+}
+
 enum UpgradeTier {
 	COMMON,
 	RARE,
@@ -36,9 +43,12 @@ enum UpgradeTier {
 	LEGENDARY 
 }
 
-var coins : int
+var coins : int = 500
 var player : Player
 var game_pause : bool = false
+
+var selected_weapon : ItemWeapon
+var equipped_weapons : Array[ItemWeapon]
 
 func get_harvesting_coins() -> void:
 	coins += player.stats.harvesting
