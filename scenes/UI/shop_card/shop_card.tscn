@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://dc35a4j7juocw"]
+[gd_scene format=3 uid="uid://b241whdvl6y1s"]
 
-[ext_resource type="StyleBox" uid="uid://dw7owmfoc5n3e" path="res://styles/common_style.tres" id="1_5t8q5"]
-[ext_resource type="Script" uid="uid://gcwsthw0bonr" path="res://scenes/UI/shop_card/shop_card.gd" id="2_vp5hh"]
-[ext_resource type="Texture2D" uid="uid://cyh23wqn8vcac" path="res://assets/sprites/Weapons/Icons/weapon_punch_icon.png" id="3_2fdog"]
-[ext_resource type="PackedScene" uid="uid://cwsnf6328g41u" path="res://scenes/UI/custom_button/custom_button.tscn" id="4_kbedx"]
-[ext_resource type="Texture2D" uid="uid://chm4srsn6xd8y" path="res://assets/sprites/Gold/gold_1.png" id="5_5imw5"]
+[ext_resource type="StyleBox" uid="uid://dw7owmfoc5n3e" path="res://styles/common_style.tres" id="1_hdqfn"]
+[ext_resource type="Script" uid="uid://vcwtaaf73uk2" path="res://scenes/UI/shop_card/shop_card.gd" id="1_nydn8"]
+[ext_resource type="Texture2D" uid="uid://cyh23wqn8vcac" path="res://assets/sprites/Weapons/Icons/weapon_punch_icon.png" id="3_7gjxg"]
+[ext_resource type="PackedScene" uid="uid://cwsnf6328g41u" path="res://scenes/UI/custom_button/custom_button.tscn" id="4_pd2u0"]
+[ext_resource type="Texture2D" uid="uid://chm4srsn6xd8y" path="res://assets/sprites/Gold/gold_1.png" id="5_qwnp0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31hux"]
 bg_color = Color(0.29411766, 0.29411766, 0.29411766, 0.78431374)
@@ -19,8 +19,8 @@ font_size = 40
 custom_minimum_size = Vector2(320, 400)
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_styles/panel = ExtResource("1_5t8q5")
-script = ExtResource("2_vp5hh")
+theme_override_styles/panel = ExtResource("1_hdqfn")
+script = ExtResource("1_nydn8")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=793816420]
 layout_mode = 1
@@ -50,7 +50,7 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("3_2fdog")
+texture = ExtResource("3_7gjxg")
 expand_mode = 1
 stretch_mode = 5
 
@@ -96,7 +96,7 @@ theme_override_font_sizes/mono_font_size = 24
 bbcode_enabled = true
 text = "描述"
 
-[node name="BuyButton" parent="MarginContainer/Control" unique_id=1673882683 instance=ExtResource("4_kbedx")]
+[node name="BuyButton" parent="MarginContainer/Control" unique_id=1673882683 instance=ExtResource("4_pd2u0")]
 custom_minimum_size = Vector2(240, 70)
 layout_mode = 1
 offset_left = -120.0
@@ -116,7 +116,7 @@ alignment = 1
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/Control/BuyButton/HBoxContainer" unique_id=1948280877]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-texture = ExtResource("5_5imw5")
+texture = ExtResource("5_qwnp0")
 expand_mode = 1
 stretch_mode = 5
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dyp3203dbfg00"]
 
 [ext_resource type="Script" uid="uid://cac45d1t5fr2x" path="res://scenes/UI/shop_panel/shop_panel.gd" id="1_b0oqu"]
-[ext_resource type="PackedScene" uid="uid://b241whdvl6y1s" path="res://scenes/UI/shop-card/shop_card.tscn" id="2_4sm0f"]
+[ext_resource type="PackedScene" uid="uid://b241whdvl6y1s" path="res://scenes/UI/shop_card/shop_card.tscn" id="2_4sm0f"]
 [ext_resource type="Script" uid="uid://cwiel26g1880j" path="res://resources/items/item_base.gd" id="2_v7oek"]
 [ext_resource type="PackedScene" uid="uid://c4kxsko37aeim" path="res://scenes/UI/statscontainer/stats_container.tscn" id="3_od4xj"]
 [ext_resource type="Resource" uid="uid://dnqnsn2hjy4ml" path="res://resources/items/weapons/fight/axe/item_axe_1.tres" id="3_x65dn"]

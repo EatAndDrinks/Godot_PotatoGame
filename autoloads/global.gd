@@ -10,12 +10,13 @@ signal on_upgrade_selected
 const FLASH_MATERIAL = preload("uid://d3if2ah6hrkol")
 const FLOATING_TEXT_SCENES = preload("uid://cw4nn1b3lyjka")
 const ITEM_CARD_SCENE = preload("uid://bevbjtf4epukv")
-
+const SELECTION_CARD_SCENE = preload("uid://bxsmu24h2lkhm")
 const COMMON_STYLE = preload("uid://dw7owmfoc5n3e")
 const EPIC_STYLE = preload("uid://cb0a3xhvx2na0")
 const LEGENDARY_STYLE = preload("uid://cmepvf1ww0jpo")
 const RARE_STYLE = preload("uid://bprixxc3qmp52")
 const COINS = preload("uid://c6f8g40vsu58h")
+const ENEMY_SPAWN_EFFECT = preload("uid://c0getah3dfrkq")
 
 
 const UPGRADE_PROBABILITY_CONFIG = {
@@ -36,6 +37,14 @@ const TIER_COLOR : Dictionary[UpgradeTier , Color] = {
 	UpgradeTier.LEGENDARY: Color(0.906 , 0.212 , 0.212),
 }
 
+var available_players: Dictionary[String , PackedScene] = {
+	"Brawler" : preload("uid://55q36q1x7u46"),
+	"Bunny" : preload("uid://cmo661422r1h5"),
+	"Crazy" : preload("uid://bquokbepf4u0o"),
+	"Knight" : preload("uid://dw65hbhlnw4ob"),
+	"Well  Rounded" : preload("uid://cinl8lvhwgxtq"), 
+}
+
 enum UpgradeTier {
 	COMMON,
 	RARE,
@@ -47,11 +56,20 @@ var coins : int = 500
 var player : Player
 var game_pause : bool = false
 
-var selected_weapon : ItemWeapon
+
+var main_player_selected : UnitStats
+var main_weapo_selected : ItemWeapon
 var equipped_weapons : Array[ItemWeapon]
 
 func get_harvesting_coins() -> void:
 	coins += player.stats.harvesting
+
+func get_seleted_player() -> Player:
+	var player_scene := available_players[main_player_selected.name]
+	var player_instance := player_scene.instantiate()
+	player = player_instance
+	return player
+	
 
 func get_chance_access(chance : float) -> bool:
 	var random : float = randf_range(0 , 1)

@@ -31,3 +31,4 @@ func setup_hitboxcomponent(damage : float , critical : bool , knockback : float 
 func _on_area_entered(area: Area2D) -> void:
 	if area is HurtboxComponent:
 		on_hit_hurtbox.emit(area)
+		SoundManager.play_sound(SoundManager.Sound.ENEMY_HIT)

@@ -34,7 +34,14 @@ func create_item_card() -> ItemCard:
 	item_card.on_item_card_selected.connect(_on_item_card_selected)
 	return item_card
 
+func create_item_weapon(weapon : ItemWeapon) -> void:
+	var card := create_item_card()
+	weapons_container.add_child(card)
+	card.item = weapon 
+
+
 func _on_new_wave_button_pressed() -> void:
+	SoundManager.play_sound(SoundManager.Sound.UI)
 	on_shop_next_wave.emit()
 
 
@@ -70,6 +77,8 @@ func _on_item_card_selected(card : ItemCard) -> void:
 
 
 func _on_combine_button_pressed() -> void:
+	SoundManager.play_sound(SoundManager.Sound.UI)
+	
 	if not context_card:
 		return
 	
@@ -107,6 +116,8 @@ func _on_combine_button_pressed() -> void:
 
 
 func _on_sell_button_3_pressed() -> void:
+	SoundManager.play_sound(SoundManager.Sound.UI) 
+	
 	if not context_card:
 		return
 	var clicked_weapon := context_card.item as ItemWeapon
